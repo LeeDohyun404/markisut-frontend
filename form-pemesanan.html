@@ -187,61 +187,75 @@
         document.getElementById('shippingMethod').addEventListener('change', updateShippingCost);
 
         document.getElementById('customerForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
+    e.preventDefault();
 
-            if (!validateForm()) return;
+    if (!validateForm()) return;
 
-            const submitButton = e.target.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.textContent = 'Memproses...';
+    const submitButton = e.target.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Memproses...';
 
-            const orderData = loadOrderData();
-            if (!orderData) return;
+    const orderData = loadOrderData();
+    if (!orderData) return;
 
-            const shippingMethod = document.getElementById('shippingMethod').value;
-            let shippingCost = 0;
-            if (shippingMethod === 'delivery') {
-                shippingCost = 10000;
-            }
+    const shippingMethod = document.getElementById('shippingMethod').value;
+    let shippingCost = 0;
+    if (shippingMethod === 'delivery') {
+        shippingCost = 10000;
+    }
 
-            const finalOrderData = {
-                ...orderData,
-                customerName: document.getElementById('customerName').value,
-                phoneNumber: document.getElementById('phoneNumber').value,
-                email: document.getElementById('email').value,
-                address: document.getElementById('address').value,
-                shippingMethod: shippingMethod,
-                customerNotes: document.getElementById('customerNotes').value,
-                shippingCost: shippingCost,
-                finalTotal: orderData.totalPrice + shippingCost
-            };
-            
-            // **PASTIKAN URL INI SUDAH BENAR**
-            const apiUrl = 'https://markisut-backend.vercel.app/';
+    const finalOrderData = {
+        ...orderData,
+        customerName: document.getElementById('customerName').value,
+        phoneNumber: document.getElementById('phoneNumber').value,
+        email: document.getElementById('email').value,
+        address: document.getElementById('address').value,
+        shippingMethod: shippingMethod,
+        customerNotes: document.getElementById('customerNotes').value,
+        shippingCost: shippingCost,
+        finalTotal: orderData.totalPrice + shippingCost
+    };
+    
+    // PERBAIKAN: URL API yang benar
+    const apiUrl = 'https://markisut-backend.vercel.app'; // Hilangkan slash di akhir
 
-            try {
-                const response = await fetch(`${apiUrl}/api/orders`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(finalOrderData),
-                });
-
-                const result = await response.json();
-
-                if (response.ok && result.success) {
-                    sessionStorage.setItem('finalOrderData', JSON.stringify(result.order));
-                    window.location.href = 'informasi-pesanan.html';
-                } else {
-                    alert('Gagal membuat pesanan: ' + (result.error || 'Terjadi kesalahan pada server.'));
-                }
-            } catch (error) {
-                console.error('Error submitting order:', error);
-                alert('Tidak dapat terhubung ke server. Periksa koneksi internet Anda dan coba lagi.');
-            } finally {
-                submitButton.disabled = false;
-                submitButton.textContent = 'Lanjutkan Pembelian';
-            }
+    try {
+        const response = await fetch(`${apiUrl}/api/orders`, {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'  // Tambahkan header ini
+            },
+            body: JSON.stringify(finalOrderData),
         });
+
+        // Cek apakah response berhasil
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        if (result.success) {
+            sessionStorage.setItem('finalOrderData', JSON.stringify(result.order));
+            window.location.href = 'informasi-pesanan.html';
+        } else {
+            alert('Gagal membuat pesanan: ' + (result.error || 'Terjadi kesalahan pada server.'));
+        }
+    } catch (error) {
+        console.error('Error submitting order:', error);
+        
+        // Pesan error yang lebih detail
+        if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
+            alert('Tidak dapat terhubung ke server. Kemungkinan masalah:\n1. Koneksi internet terputus\n2. Server sedang maintenance\n3. URL backend tidak valid');
+        } else {
+            alert('Terjadi kesalahan: ' + error.message);
+        }
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Lanjutkan Pembelian';
+    }
+});
 
         document.addEventListener('DOMContentLoaded', function() {
             displayOrderPreview();
