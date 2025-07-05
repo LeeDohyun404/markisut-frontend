@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Kaos Lusinan - Markisut</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="lusinan-page">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Markisut</h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link active">Produk</a>
+                        <div class="dropdown-content">
+                            <a href="lusinan.html">Lusinan</a>
+                            <a href="kaos.html">Kaos</a>
+                            <a href="jaket.html">Jaket</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html" class="nav-link">About</a></li>
+                    <li><a href="index.html" class="nav-link">Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="product-form">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="form-title">Paket Kaos Lusinan</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+                    Pesan kaos custom dalam jumlah lusinan dengan harga spesial Rp 250.000/lusin!
+                </p>
+
+                <form id="lusinanForm">
+                    <div class="form-group">
+                        <label>Pilih Desain Sablon:</label>
+                        <div class="design-gallery" id="designGallery">
+                             <div class="design-option">
+                                <input type="radio" name="design" value="design1" id="design1">
+                                <img src="img1.jpeg" alt="Design 1">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design2" id="design2">
+                                <img src="img2.jpeg" alt="Design 2">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design3" id="design3">
+                                <img src="img3.jpeg" alt="Design 3">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design4" id="design4">
+                                <img src="img4.jpeg" alt="Design 4">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design5" id="design5">
+                                <img src="img5.jpeg" alt="Design 5">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design6" id="design6">
+                                <img src="img6.jpeg" alt="Design 6">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design7" id="design7">
+                                <img src="img7.jpeg" alt="Design 7">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design8" id="design8">
+                                <img src="img8.jpeg" alt="Design 8">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design9" id="design9">
+                                <img src="img9.jpeg" alt="Design 9">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design10" id="design10">
+                                <img src="img10.jpeg" alt="Design 10">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design11" id="design11">
+                                <img src="img11.jpeg" alt="Design 11">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design12" id="design12">
+                                <img src="img12.jpeg" alt="Design 12">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design13" id="design13">
+                                <img src="img13.jpeg" alt="Design 13">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design14" id="design14">
+                                <img src="img14.jpeg" alt="Design 14">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design15" id="design15">
+                                <img src="img15.jpeg" alt="Design 15">
+                            </div>
+                        </div>
+
+                        <div class="upload-area" id="uploadArea">
+                            <p>Atau upload desain custom Anda</p>
+                            <p style="font-size: 0.9rem; color: #666;">Klik atau drag & drop file gambar di sini</p>
+                            <input type="file" id="customDesign" name="customDesign" accept="image/*" style="display: none;">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="material">Pilih Bahan:</label>
+                        <select id="material" name="material" required>
+                            <option value="">-- Pilih Bahan --</option>
+                            <option value="cotton">Cotton Combed 30s</option>
+                            <option value="polyester">Polyester</option>
+                            <option value="spandex">Spandex</option>
+                            <option value="bamboo">Bamboo Fiber</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="size">Pilih Ukuran:</label>
+                        <select id="size" name="size" required>
+                            <option value="">-- Pilih Ukuran --</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lusin">Jumlah (Lusin):</label>
+                        <select id="lusin" name="lusin" required>
+                            <option value="">-- Pilih Jumlah --</option>
+                            <option value="1">1 Lusin (12 pcs)</option>
+                            <option value="2">2 Lusin (24 pcs)</option>
+                            <option value="3">3 Lusin (36 pcs)</option>
+                            <option value="4">4 Lusin (48 pcs)</option>
+                            <option value="5">5 Lusin (60 pcs)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="color">Pilih Warna Kaos:</label>
+                        <select id="color" name="color" required>
+                            <option value="">-- Pilih Warna --</option>
+                            <option value="white">Putih</option>
+                            <option value="black">Hitam</option>
+                            <option value="navy">Navy</option>
+                            <option value="grey">Abu-abu</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Catatan Tambahan (Opsional):</label>
+                        <textarea id="notes" name="notes" rows="3" placeholder="Tulis catatan..."></textarea>
+                    </div>
+
+                    <div class="order-summary">
+                        <h3>Ringkasan Pesanan</h3>
+                        <div id="orderDetails">
+                            <p>Silakan lengkapi pilihan produk terlebih dahulu</p>
+                        </div>
+                        <div class="order-total">
+                            Total: <span id="totalPrice">Rp 0</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Lanjut ke Informasi Pembelian</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <a href="index.html" class="back-button">← Kembali</a>
+
+    <script>
+        function updateOrderSummary() {
+            const lusin = parseInt(document.getElementById('lusin').value);
+            const size = document.getElementById('size').value;
+            const material = document.getElementById('material');
+            const color = document.getElementById('color').value;
+
+            let orderDetails = '';
+            let totalPrice = 0;
+
+            if (lusin && size && material.value && color) {
+                const totalQty = lusin * 12;
+                const pricePerLusin = 250000;
+                totalPrice = pricePerLusin * lusin;
+
+                orderDetails = `
+                    <div class="order-item"><span>Produk:</span><span>Kaos Custom Paket</span></div>
+                    <div class="order-item"><span>Bahan:</span><span>${material.options[material.selectedIndex].text}</span></div>
+                    <div class="order-item"><span>Ukuran:</span><span>${size}</span></div>
+                    <div class="order-item"><span>Warna:</span><span>${document.getElementById('color').options[document.getElementById('color').selectedIndex].text}</span></div>
+                    <div class="order-item"><span>Jumlah:</span><span>${totalQty} pcs (${lusin} lusin)</span></div>
+                `;
+            } else {
+                orderDetails = '<p>Silakan lengkapi pilihan produk terlebih dahulu</p>';
+            }
+
+            document.getElementById('orderDetails').innerHTML = orderDetails;
+            document.getElementById('totalPrice').textContent = `Rp ${totalPrice.toLocaleString()}`;
+        }
+
+        // Desain galeri
+        document.querySelectorAll('.design-option').forEach(option => {
+            option.addEventListener('click', function () {
+                document.querySelectorAll('.design-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                this.querySelector('input[type="radio"]').checked = true;
+            });
+        });
+
+        // Upload custom design
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('customDesign');
+
+        uploadArea.addEventListener('click', () => fileInput.click());
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                uploadArea.innerHTML = `<p>File uploaded: ${e.target.files[0].name}</p>`;
+            }
+        });
+
+        // Event listeners
+        ['material', 'size', 'lusin', 'color'].forEach(id => {
+            document.getElementById(id).addEventListener('change', updateOrderSummary);
+        });
+
+        // Form submit
+        document.getElementById('lusinanForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const lusin = parseInt(document.getElementById('lusin').value);
+            const totalQty = lusin * 12;
+            const material = document.getElementById('material');
+            const fileInput = document.getElementById('customDesign');
+
+            const designSelected = document.querySelector('input[name="design"]:checked') || fileInput.files.length > 0;
+            if (!designSelected) {
+                alert('Silakan pilih atau upload desain terlebih dahulu!');
+                return;
+            }
+
+            const formData = {
+                productType: 'lusinan',
+                design: document.querySelector('input[name="design"]:checked')?.value || 'custom',
+                material: material.value,
+                materialName: material.options[material.selectedIndex].text,
+                size: document.getElementById('size').value,
+                quantity: totalQty,
+                color: document.getElementById('color').value,
+                colorName: document.getElementById('color').options[document.getElementById('color').selectedIndex].text,
+                notes: document.getElementById('notes').value,
+                unitPrice: 250000,
+                totalPrice: 250000 * lusin
+            };
+
+            try {
+                sessionStorage.setItem('orderData', JSON.stringify(formData));
+            } catch (e) {
+                window.orderData = formData;
+            }
+
+            window.location.href = 'form-pemesanan.html';
+        });
+
+        updateOrderSummary();
+    </script>
+</body>
+</html>

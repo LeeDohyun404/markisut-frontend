@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaket Custom - Markisut</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Markisut</h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link active">Produk</a>
+                        <div class="dropdown-content">                            
+                            <a href="kaos.html">Kaos</a>
+                            <a href="jaket.html">Jaket</a>
+                            <a href="lusinan.html">Lusinan</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html" class="nav-link">About</a></li>
+                    <li><a href="index.html" class="nav-link">Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="product-form">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="form-title">Jaket Custom</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+                    Buat jaket custom yang hangat dan stylish dengan berbagai pilihan bahan berkualitas.
+                </p>
+
+                <form id="jaketForm">
+                    <div class="form-group">
+                        <label>Pilih Desain Sablon:</label>
+                        <div class="design-gallery" id="designGallery">
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design1" id="design1">
+                                <img src="img1.jpeg" alt="Design 1">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design2" id="design2">
+                                <img src="img2.jpeg" alt="Design 2">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design3" id="design3">
+                                <img src="img3.jpeg" alt="Design 3">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design4" id="design4">
+                                <img src="img4.jpeg" alt="Design 4">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design5" id="design5">
+                                <img src="img5.jpeg" alt="Design 5">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design6" id="design6">
+                                <img src="img6.jpeg" alt="Design 6">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design7" id="design7">
+                                <img src="img7.jpeg" alt="Design 7">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design8" id="design8">
+                                <img src="img8.jpeg" alt="Design 8">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design9" id="design9">
+                                <img src="img9.jpeg" alt="Design 9">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design10" id="design10">
+                                <img src="img10.jpeg" alt="Design 10">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design11" id="design11">
+                                <img src="img11.jpeg" alt="Design 11">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design12" id="design12">
+                                <img src="img12.jpeg" alt="Design 12">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design13" id="design13">
+                                <img src="img13.jpeg" alt="Design 13">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design14" id="design14">
+                                <img src="img14.jpeg" alt="Design 14">
+                            </div>
+                            <div class="design-option">
+                                <input type="radio" name="design" value="design15" id="design15">
+                                <img src="img15.jpeg" alt="Design 15">
+                            </div>
+                        </div>
+
+                        <div class="upload-area" id="uploadArea">
+                            <p>Atau upload desain custom Anda</p>
+                            <p style="font-size: 0.9rem; color: #666;">Klik atau drag & drop file gambar di sini</p>
+                            <input type="file" id="customDesign" name="customDesign" accept="image/*" style="display: none;">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="material">Pilih Bahan:</label>
+                        <select id="material" name="material" required>
+                            <option value="">-- Pilih Bahan --</option>
+                            <option value="fleece" data-price="85000">Fleece - Rp 85.000</option>
+                            <option value="drill" data-price="90000">Drill - Rp 90.000</option>
+                            <option value="taslan" data-price="95000">Taslan - Rp 95.000</option>
+                            <option value="canvas" data-price="100000">Canvas - Rp 100.000</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jacketType">Tipe Jaket:</label>
+                        <select id="jacketType" name="jacketType" required>
+                            <option value="">-- Pilih Tipe Jaket --</option>
+                            <option value="hoodie">Hoodie</option>
+                            <option value="jacket">Jacket</option>
+                            <option value="varsity">Varsity</option>
+                            <option value="bomber">Bomber</option>
+                            <option value="windbreaker">Windbreaker</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="size">Pilih Ukuran:</label>
+                        <select id="size" name="size" required>
+                            <option value="">-- Pilih Ukuran --</option>
+                            <option value="S">S (Small)</option>
+                            <option value="M">M (Medium)</option>
+                            <option value="L">L (Large)</option>
+                            <option value="XL">XL (Extra Large)</option>
+                            <option value="XXL">XXL (Double XL)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Jumlah:</label>
+                        <div class="quantity-control" style="justify-content: flex-start;">
+                            <button type="button" class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                            <input type="number" class="quantity-input" id="quantity" name="quantity" value="1" min="1" max="50" style="width: 80px;">
+                            <button type="button" class="quantity-btn" onclick="changeQuantity(1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="color">Pilih Warna Jaket:</label>
+                        <select id="color" name="color" required>
+                            <option value="">-- Pilih Warna --</option>
+                            <option value="black">Hitam</option>
+                            <option value="navy">Navy</option>
+                            <option value="grey">Abu-abu</option>
+                            <option value="white">Putih</option>
+                            <option value="maroon">Maroon</option>
+                            <option value="green">Hijau Army</option>
+                            <option value="brown">Coklat</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Catatan Tambahan (Opsional):</label>
+                        <textarea id="notes" name="notes" rows="3" placeholder="Tuliskan catatan khusus untuk pesanan Anda..."></textarea>
+                    </div>
+
+                    <div class="order-summary">
+                        <h3>Ringkasan Pesanan</h3>
+                        <div id="orderDetails">
+                            <p>Silakan lengkapi pilihan produk terlebih dahulu</p>
+                        </div>
+                        <div class="order-total">
+                            Total: <span id="totalPrice">Rp 0</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Lanjut ke Informasi Pembelian</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <a href="index.html" class="back-button">← Kembali</a>
+
+    <script>
+        function changeQuantity(change) {
+            const input = document.getElementById('quantity');
+            const currentValue = parseInt(input.value);
+            const newValue = Math.max(1, Math.min(50, currentValue + change));
+            input.value = newValue;
+            updateOrderSummary();
+        }
+
+        function updateOrderSummary() {
+            const material = document.getElementById('material');
+            const jacketType = document.getElementById('jacketType').value;
+            const size = document.getElementById('size').value;
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const color = document.getElementById('color').value;
+            
+            let orderDetails = '';
+            let totalPrice = 0;
+            
+            if (material.value && jacketType && size && quantity && color) {
+                const materialText = material.options[material.selectedIndex].text;
+                const price = parseInt(material.options[material.selectedIndex].dataset.price);
+                totalPrice = price * quantity;
+                
+                orderDetails = `
+                    <div class="order-item">
+                        <span>Produk:</span>
+                        <span>Jaket Custom</span>
+                    </div>
+                    <div class="order-item">
+                        <span>Tipe:</span>
+                        <span>${jacketType.charAt(0).toUpperCase() + jacketType.slice(1)}</span>
+                    </div>
+                    <div class="order-item">
+                        <span>Bahan:</span>
+                        <span>${materialText.split(' - ')[0]}</span>
+                    </div>
+                    <div class="order-item">
+                        <span>Ukuran:</span>
+                        <span>${size}</span>
+                    </div>
+                    <div class="order-item">
+                        <span>Warna:</span>
+                        <span>${document.getElementById('color').options[document.getElementById('color').selectedIndex].text}</span>
+                    </div>
+                    <div class="order-item">
+                        <span>Jumlah:</span>
+                        <span>${quantity} pcs</span>
+                    </div>
+                `;
+            } else {
+                orderDetails = '<p>Silakan lengkapi pilihan produk terlebih dahulu</p>';
+            }
+            
+            document.getElementById('orderDetails').innerHTML = orderDetails;
+            document.getElementById('totalPrice').textContent = `Rp ${totalPrice.toLocaleString()}`;
+        }
+
+        // Design selection
+        document.querySelectorAll('.design-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.design-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                this.querySelector('input[type="radio"]').checked = true;
+            });
+        });
+
+        // Upload area functionality
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('customDesign');
+
+        uploadArea.addEventListener('click', () => fileInput.click());
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                handleFileUpload(files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFileUpload(e.target.files[0]);
+            }
+        });
+
+        function handleFileUpload(file) {
+            uploadArea.innerHTML = `<p>File uploaded: ${file.name}</p>`;
+            document.querySelectorAll('.design-option').forEach(opt => {
+                opt.classList.remove('selected');
+                opt.querySelector('input[type="radio"]').checked = false;
+            });
+        }
+
+        // Event listeners
+        document.getElementById('material').addEventListener('change', updateOrderSummary);
+        document.getElementById('jacketType').addEventListener('change', updateOrderSummary);
+        document.getElementById('size').addEventListener('change', updateOrderSummary);
+        document.getElementById('quantity').addEventListener('input', updateOrderSummary);
+        document.getElementById('color').addEventListener('change', updateOrderSummary);
+
+        // Form submission
+        document.getElementById('jaketForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const designSelected = document.querySelector('input[name="design"]:checked') || fileInput.files.length > 0;
+            if (!designSelected) {
+                alert('Silakan pilih desain atau upload desain custom!');
+                return;
+            }
+            
+            const material = document.getElementById('material');
+            const formData = {
+                productType: 'jaket',
+                design: document.querySelector('input[name="design"]:checked')?.value || 'custom',
+                material: material.value,
+                materialName: material.options[material.selectedIndex].text.split(' - ')[0],
+                jacketType: document.getElementById('jacketType').value,
+                size: document.getElementById('size').value,
+                quantity: parseInt(document.getElementById('quantity').value),
+                color: document.getElementById('color').value,
+                colorName: document.getElementById('color').options[document.getElementById('color').selectedIndex].text,
+                notes: document.getElementById('notes').value,
+                unitPrice: parseInt(material.options[material.selectedIndex].dataset.price),
+                totalPrice: parseInt(material.options[material.selectedIndex].dataset.price) * parseInt(document.getElementById('quantity').value)
+            };
+            
+            try {
+                sessionStorage.setItem('orderData', JSON.stringify(formData));
+            } catch(e) {
+                window.orderData = formData;
+            }
+            
+            window.location.href = 'form-pemesanan.html';
+        });
+
+        updateOrderSummary();
+    </script>
+</body>
+</html>

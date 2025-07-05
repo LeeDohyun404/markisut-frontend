@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Pesanan - Markisut</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Markisut</h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">Produk</a>
+                        <div class="dropdown-content">
+                            <a href="lusinan.html">Lusinan</a>
+                            <a href="kaos.html">Kaos</a>
+                            <a href="jaket.html">Jaket</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html" class="nav-link">About</a></li>
+                    <li><a href="index.html" class="nav-link">Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="product-form">
+        <div class="container">
+            <div class="form-container">
+                <div class="order-confirmation-header">
+                    <div class="success-icon">✓</div>
+                    <h2 class="form-title">Informasi Pesanan</h2>
+                    <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+                        Berikut adalah detail lengkap pesanan Anda
+                    </p>
+                </div>
+
+                <div class="order-id-section">
+                    <h3>ID Pesanan: <span id="orderId"></span></h3>
+                    <p style="color: #666; font-size: 0.9rem;">Simpan ID pesanan ini untuk referensi Anda</p>
+                </div>
+
+                <div class="info-section">
+                    <h3>Informasi Pelanggan</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Nama:</span>
+                            <span class="info-value" id="customerName"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">No. HP:</span>
+                            <span class="info-value" id="phoneNumber"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <span class="info-value" id="email"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Alamat:</span>
+                            <span class="info-value" id="address"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Metode Pengiriman:</span>
+                            <span class="info-value" id="shippingMethod"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Informasi Produk</h3>
+                    <div class="product-info" id="productInfo">
+                        </div>
+                </div>
+
+                <div class="info-section" id="designSection">
+                    <h3>Desain Sablon</h3>
+                    <div class="design-info">
+                        <div class="info-item">
+                            <span class="info-label">Jenis Desain:</span>
+                            <span class="info-value" id="designType"></span>
+                        </div>
+                        <div id="designPreview" class="design-preview">
+                            </div>
+                    </div>
+                </div>
+
+                <div class="info-section" id="notesSection">
+                    <h3>Catatan</h3>
+                    <div class="notes-content">
+                        <div class="notes-item" id="productNotes">
+                            </div>
+                        <div class="notes-item" id="customerNotes">
+                            </div>
+                    </div>
+                </div>
+
+                <div class="order-summary final-summary">
+                    <h3>Ringkasan Pembayaran</h3>
+                    <div class="summary-breakdown">
+                        <div class="summary-item">
+                            <span>Subtotal Produk:</span>
+                            <span id="subtotalPrice">Rp 0</span>
+                        </div>
+                        <div class="summary-item" id="shippingCostRow">
+                            <span>Ongkos Kirim:</span>
+                            <span id="shippingCost">Rp 0</span>
+                        </div>
+                        <div class="summary-item total-row">
+                            <span><strong>Total Pembayaran:</strong></span>
+                            <span id="finalTotal"><strong>Rp 0</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button onclick="window.print()" class="btn-secondary">Cetak Pesanan</button>
+                    <button onclick="contactWhatsApp()" class="btn-primary">Hubungi via WhatsApp</button>
+                </div>
+
+                <div class="order-status">
+                    <h3>Status Pesanan</h3>
+                    <div class="status-timeline">
+                        <div class="status-item active">
+                            <div class="status-dot"></div>
+                            <div class="status-text">
+                                <strong>Pesanan Diterima</strong>
+                                <span class="status-time" id="orderTime"></span>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-dot"></div>
+                            <div class="status-text">
+                                <strong>Konfirmasi Pembayaran</strong>
+                                <span class="status-time">Menunggu konfirmasi</span>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-dot"></div>
+                            <div class="status-text">
+                                <strong>Proses Produksi</strong>
+                                <span class="status-time">Menunggu</span>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-dot"></div>
+                            <div class="status-text">
+                                <strong>Pengiriman</strong>
+                                <span class="status-time">Menunggu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="index.html" class="back-button">← Kembali ke Beranda</a>
+
+    <script>
+        function loadOrderData() {
+            let orderData = null;
+            try {
+                orderData = JSON.parse(sessionStorage.getItem('finalOrderData'));
+            } catch(e) {
+                orderData = window.finalOrderData;
+            }
+            
+            if (!orderData) {
+                alert('Data pesanan tidak ditemukan. Silakan kembali ke beranda.');
+                window.location.href = 'beranda.html';
+                return null;
+            }
+            return orderData;
+        }
+
+        function displayOrderInfo() {
+            const orderData = loadOrderData();
+            if (!orderData) return;
+
+            document.getElementById('orderId').textContent = orderData.id;
+            document.getElementById('customerName').textContent = orderData.customerName;
+            document.getElementById('phoneNumber').textContent = orderData.phoneNumber;
+            document.getElementById('email').textContent = orderData.email;
+            document.getElementById('address').textContent = orderData.address;
+            
+            const shippingMethods = {
+                'pickup': 'Ambil di Toko',
+                'delivery': 'Antar ke Alamat',
+                'jne': 'JNE',
+                'pos': 'POS Indonesia'
+            };
+            document.getElementById('shippingMethod').textContent = shippingMethods[orderData.shippingMethod] || orderData.shippingMethod;
+
+            displayProductInfo(orderData);
+            displayDesignInfo(orderData);
+            displayNotes(orderData);
+            displayPricing(orderData);
+
+            document.getElementById('orderTime').textContent = new Date(orderData.createdAt).toLocaleString('id-ID');
+        }
+
+        function displayProductInfo(orderData) {
+             let productName;
+            if (orderData.productType === 'kaos') {
+                productName = 'Kaos Custom';
+            } else if (orderData.productType === 'jaket') {
+                productName = 'Jaket Custom';
+            } else if (orderData.productType === 'lusinan' || orderData.productType === 'jaket_lusinan') {
+                productName = 'Paket Lusinan';
+            }
+            
+            let productInfo = `
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Produk:</span>
+                        <span class="info-value">${productName}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Bahan:</span>
+                        <span class="info-value">${orderData.materialName}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Ukuran:</span>
+                        <span class="info-value">${orderData.size}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Warna:</span>
+                        <span class="info-value">${orderData.colorName}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Jumlah:</span>
+                        <span class="info-value">${orderData.quantity} pcs</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Harga Satuan:</span>
+                        <span class="info-value">Rp ${orderData.unitPrice.toLocaleString()}</span>
+                    </div>
+            `;
+
+            if (orderData.productType === 'jaket' && orderData.jacketType) {
+                productInfo = `
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Produk:</span>
+                            <span class="info-value">${productName}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Tipe:</span>
+                            <span class="info-value">${orderData.jacketType.charAt(0).toUpperCase() + orderData.jacketType.slice(1)}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Bahan:</span>
+                            <span class="info-value">${orderData.materialName}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Ukuran:</span>
+                            <span class="info-value">${orderData.size}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Warna:</span>
+                            <span class="info-value">${orderData.colorName}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Jumlah:</span>
+                            <span class="info-value">${orderData.quantity} pcs</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Harga Satuan:</span>
+                            <span class="info-value">Rp ${orderData.unitPrice.toLocaleString()}</span>
+                        </div>
+                `;
+            }
+
+            productInfo += '</div>';
+            document.getElementById('productInfo').innerHTML = productInfo;
+        }
+
+        function displayDesignInfo(orderData) {
+            const designType = orderData.design === 'custom' ? 'Desain Custom (Upload)' : `Desain Template (${orderData.design})`;
+            document.getElementById('designType').textContent = designType;
+
+            if (orderData.design !== 'custom') {
+                const designPreview = document.getElementById('designPreview');
+                designPreview.innerHTML = `
+                    <div class="template-preview">
+                        <small style="color: #666;">Preview desain akan dikonfirmasi via WhatsApp sebelum produksi</small>
+                    </div>
+                `;
+            } else {
+                document.getElementById('designPreview').innerHTML = `
+                    <div class="custom-design-info">
+                        <p>Desain custom telah diupload</p>
+                        <small style="color: #666;">Preview desain akan dikonfirmasi via WhatsApp sebelum produksi</small>
+                    </div>
+                `;
+            }
+        }
+
+        function displayNotes(orderData) {
+            const notesSection = document.getElementById('notesSection');
+            const productNotesDiv = document.getElementById('productNotes');
+            const customerNotesDiv = document.getElementById('customerNotes');
+            let hasNotes = false;
+
+            productNotesDiv.innerHTML = '';
+            customerNotesDiv.innerHTML = '';
+
+            if (orderData.notes) {
+                productNotesDiv.innerHTML = `
+                    <div class="info-item">
+                        <span class="info-label">Catatan Produk:</span>
+                        <span class="info-value">${orderData.notes}</span>
+                    </div>
+                `;
+                hasNotes = true;
+            }
+            
+            if (orderData.customerNotes) {
+                customerNotesDiv.innerHTML = `
+                    <div class="info-item">
+                        <span class="info-label">Catatan Pelanggan:</span>
+                        <span class="info-value">${orderData.customerNotes}</span>
+                    </div>
+                `;
+                hasNotes = true;
+            }
+
+            if (!hasNotes) {
+                notesSection.style.display = 'none';
+            }
+        }
+
+        function displayPricing(orderData) {
+            document.getElementById('subtotalPrice').textContent = `Rp ${orderData.totalPrice.toLocaleString()}`;
+            
+            if (orderData.shippingCost > 0) {
+                document.getElementById('shippingCost').textContent = `Rp ${orderData.shippingCost.toLocaleString()}`;
+            } else {
+                document.getElementById('shippingCostRow').style.display = 'none';
+            }
+            
+            document.getElementById('finalTotal').innerHTML = `<strong>Rp ${orderData.finalTotal.toLocaleString()}</strong>`;
+        }
+
+        function contactWhatsApp() {
+            const orderData = loadOrderData();
+            if (!orderData) return;
+
+            const productName = orderData.productType === 'kaos' ? 'Kaos Custom' : 'Jaket Custom';
+            
+            let message = `Halo, saya ingin mengkonfirmasi pesanan saya dengan:\n\n`;
+            message += `ID Pesanan: *${orderData.id}*\n`;
+            message += `Nama: ${orderData.customerName}\n`;
+            message += `Produk: ${productName}\n`;
+            message += `Jumlah: ${orderData.quantity} pcs\n`;
+            message += `Total Pembayaran: *Rp ${orderData.finalTotal.toLocaleString()}*\n\n`;
+            message += `Mohon info lanjut untuk proses pembayaran. Terima kasih!`;
+
+            const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            displayOrderInfo();
+        });
+    </script>
+</body>
+</html>
