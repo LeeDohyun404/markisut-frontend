@@ -23,8 +23,8 @@
                             <a href="lusinan.html">Lusinan</a>
                         </div>
                     </li>
-                    <li><a href="index.html" class="nav-link">About</a></li>
-                    <li><a href="index.html" class="nav-link">Service</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#service" class="nav-link">Service</a></li>
                 </ul>
             </nav>
         </div>
@@ -42,66 +42,21 @@
                     <div class="form-group">
                         <label>Pilih Desain Sablon:</label>
                         <div class="design-gallery" id="designGallery">
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design1" id="design1">
-                                <img src="img1.jpeg" alt="Design 1">
-                            </div>
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design2" id="design2">
-                                <img src="img2.jpeg" alt="Design 2">
-                            </div>
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design3" id="design3">
-                                <img src="img3.jpeg" alt="Design 3">
-                            </div>
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design4" id="design4">
-                                <img src="img4.jpeg" alt="Design 4">
-                            </div>
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design5" id="design5">
-                                <img src="img5.jpeg" alt="Design 5">
-                            </div>
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design6" id="design6">
-                                <img src="img6.jpeg" alt="Design 6">
-                            </div>
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design7" id="design7">
-                                <img src="img7.jpeg" alt="Design 7">
-                            </div>
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design8" id="design8">
-                                <img src="img8.jpeg" alt="Design 8">
-                            </div>
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design9" id="design9">
-                                <img src="img9.jpeg" alt="Design 9">
-                            </div>
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design10" id="design10">
-                                <img src="img10.jpeg" alt="Design 10">
-                            </div>
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design11" id="design11">
-                                <img src="img11.jpeg" alt="Design 11">
-                            </div>
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design12" id="design12">
-                                <img src="img12.jpeg" alt="Design 12">
-                            </div>
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design13" id="design13">
-                                <img src="img13.jpeg" alt="Design 13">
-                            </div>
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design14" id="design14">
-                                <img src="img14.jpeg" alt="Design 14">
-                            </div>
-                            <div class="design-option">
-                                <input type="radio" name="design" value="design15" id="design15">
-                                <img src="img15.jpeg" alt="Design 15">
-                            </div>
+                             <div class="design-option"><input type="radio" name="design" value="design1" id="design1"><img src="img1.jpeg" alt="Design 1"></div>
+                             <div class="design-option"><input type="radio" name="design" value="design2" id="design2"><img src="img2.jpeg" alt="Design 2"></div>
+                             <div class="design-option"><input type="radio" name="design" value="design3" id="design3"><img src="img3.jpeg" alt="Design 3"></div>
+                             <div class="design-option"><input type="radio" name="design" value="design4" id="design4"><img src="img4.jpeg" alt="Design 4"></div>
+                             <div class="design-option"><input type="radio" name="design" value="design5" id="design5"><img src="img5.jpeg" alt="Design 5"></div>
+                             <div class="design-option"><input type="radio" name="design" value="design6" id="design6"><img src="img6.jpeg" alt="Design 6"></div>
+                             <div class="design-option"><input type="radio" name="design" value="design7" id="design7"><img src="img7.jpeg" alt="Design 7"></div>
+                             <div class="design-option"><input type="radio" name="design" value="design8" id="design8"><img src="img8.jpeg" alt="Design 8"></div>
+                             <div class="design-option"><input type="radio" name="design" value="design9" id="design9"><img src="img9.jpeg" alt="Design 9"></div>
+                             <div class="design-option"><input type="radio" name="design" value="design10" id="design10"><img src="img10.jpeg" alt="Design 10"></div>
+                             <div class="design-option"><input type="radio" name="design" value="design11" id="design11"><img src="img11.jpeg" alt="Design 11"></div>
+                             <div class="design-option"><input type="radio" name="design" value="design12" id="design12"><img src="img12.jpeg" alt="Design 12"></div>
+                             <div class="design-option"><input type="radio" name="design" value="design13" id="design13"><img src="img13.jpeg" alt="Design 13"></div>
+                             <div class="design-option"><input type="radio" name="design" value="design14" id="design14"><img src="img14.jpeg" alt="Design 14"></div>
+                             <div class="design-option"><input type="radio" name="design" value="design15" id="design15"><img src="img15.jpeg" alt="Design 15"></div>
                         </div>
 
                         <div class="upload-area" id="uploadArea">
@@ -211,36 +166,18 @@
             let orderDetails = '';
             let totalPrice = 0;
             
-            if (material.value && jacketType && size && quantity && color) {
+            if (material.value && jacketType && size && quantity > 0 && color) {
                 const materialText = material.options[material.selectedIndex].text;
                 const price = parseInt(material.options[material.selectedIndex].dataset.price);
                 totalPrice = price * quantity;
                 
                 orderDetails = `
-                    <div class="order-item">
-                        <span>Produk:</span>
-                        <span>Jaket Custom</span>
-                    </div>
-                    <div class="order-item">
-                        <span>Tipe:</span>
-                        <span>${jacketType.charAt(0).toUpperCase() + jacketType.slice(1)}</span>
-                    </div>
-                    <div class="order-item">
-                        <span>Bahan:</span>
-                        <span>${materialText.split(' - ')[0]}</span>
-                    </div>
-                    <div class="order-item">
-                        <span>Ukuran:</span>
-                        <span>${size}</span>
-                    </div>
-                    <div class="order-item">
-                        <span>Warna:</span>
-                        <span>${document.getElementById('color').options[document.getElementById('color').selectedIndex].text}</span>
-                    </div>
-                    <div class="order-item">
-                        <span>Jumlah:</span>
-                        <span>${quantity} pcs</span>
-                    </div>
+                    <div class="order-item"><span>Produk:</span><span>Jaket Custom</span></div>
+                    <div class="order-item"><span>Tipe:</span><span>${jacketType.charAt(0).toUpperCase() + jacketType.slice(1)}</span></div>
+                    <div class="order-item"><span>Bahan:</span><span>${materialText.split(' - ')[0]}</span></div>
+                    <div class="order-item"><span>Ukuran:</span><span>${size}</span></div>
+                    <div class="order-item"><span>Warna:</span><span>${document.getElementById('color').options[document.getElementById('color').selectedIndex].text}</span></div>
+                    <div class="order-item"><span>Jumlah:</span><span>${quantity} pcs</span></div>
                 `;
             } else {
                 orderDetails = '<p>Silakan lengkapi pilihan produk terlebih dahulu</p>';
@@ -250,7 +187,6 @@
             document.getElementById('totalPrice').textContent = `Rp ${totalPrice.toLocaleString()}`;
         }
 
-        // Design selection
         document.querySelectorAll('.design-option').forEach(option => {
             option.addEventListener('click', function() {
                 document.querySelectorAll('.design-option').forEach(opt => opt.classList.remove('selected'));
@@ -259,31 +195,19 @@
             });
         });
 
-        // Upload area functionality
         const uploadArea = document.getElementById('uploadArea');
         const fileInput = document.getElementById('customDesign');
-
         uploadArea.addEventListener('click', () => fileInput.click());
-
-        uploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadArea.classList.add('dragover');
-        });
-
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.classList.remove('dragover');
-        });
-
+        uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.classList.add('dragover'); });
+        uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('dragover'));
         uploadArea.addEventListener('drop', (e) => {
             e.preventDefault();
             uploadArea.classList.remove('dragover');
-            const files = e.dataTransfer.files;
-            if (files.length > 0) {
-                fileInput.files = files;
-                handleFileUpload(files[0]);
+            if (e.dataTransfer.files.length > 0) {
+                fileInput.files = e.dataTransfer.files;
+                handleFileUpload(e.dataTransfer.files[0]);
             }
         });
-
         fileInput.addEventListener('change', (e) => {
             if (e.target.files.length > 0) {
                 handleFileUpload(e.target.files[0]);
@@ -291,41 +215,43 @@
         });
 
         function handleFileUpload(file) {
-            uploadArea.innerHTML = `<p>File uploaded: ${file.name}</p>`;
+            uploadArea.innerHTML = `<p>File diupload: ${file.name}</p>`;
             document.querySelectorAll('.design-option').forEach(opt => {
                 opt.classList.remove('selected');
                 opt.querySelector('input[type="radio"]').checked = false;
             });
         }
 
-        // Event listeners
-        document.getElementById('material').addEventListener('change', updateOrderSummary);
-        document.getElementById('jacketType').addEventListener('change', updateOrderSummary);
-        document.getElementById('size').addEventListener('change', updateOrderSummary);
-        document.getElementById('quantity').addEventListener('input', updateOrderSummary);
-        document.getElementById('color').addEventListener('change', updateOrderSummary);
+        ['material', 'jacketType', 'size', 'quantity', 'color'].forEach(id => {
+            const element = document.getElementById(id);
+            if(element) element.addEventListener('input', updateOrderSummary);
+            if(element) element.addEventListener('change', updateOrderSummary);
+        });
 
-        // Form submission
         document.getElementById('jaketForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
+            const material = document.getElementById('material');
+            const jacketType = document.getElementById('jacketType');
+            const size = document.getElementById('size');
+            const color = document.getElementById('color');
             const designSelected = document.querySelector('input[name="design"]:checked') || fileInput.files.length > 0;
-            if (!designSelected) {
-                alert('Silakan pilih desain atau upload desain custom!');
+
+            if (!designSelected || !material.value || !jacketType.value || !size.value || !color.value) {
+                alert('Harap lengkapi semua pilihan produk (Desain, Bahan, Tipe, Ukuran, dan Warna) sebelum melanjutkan!');
                 return;
             }
             
-            const material = document.getElementById('material');
             const formData = {
                 productType: 'jaket',
                 design: document.querySelector('input[name="design"]:checked')?.value || 'custom',
                 material: material.value,
                 materialName: material.options[material.selectedIndex].text.split(' - ')[0],
-                jacketType: document.getElementById('jacketType').value,
-                size: document.getElementById('size').value,
+                jacketType: jacketType.value,
+                size: size.value,
                 quantity: parseInt(document.getElementById('quantity').value),
-                color: document.getElementById('color').value,
-                colorName: document.getElementById('color').options[document.getElementById('color').selectedIndex].text,
+                color: color.value,
+                colorName: color.options[color.selectedIndex].text,
                 notes: document.getElementById('notes').value,
                 unitPrice: parseInt(material.options[material.selectedIndex].dataset.price),
                 totalPrice: parseInt(material.options[material.selectedIndex].dataset.price) * parseInt(document.getElementById('quantity').value)
@@ -333,11 +259,11 @@
             
             try {
                 sessionStorage.setItem('orderData', JSON.stringify(formData));
+                window.location.href = 'form-pemesanan.html';
             } catch(e) {
-                window.orderData = formData;
+                console.error("Gagal menyimpan ke sessionStorage:", e);
+                alert("Terjadi masalah saat menyimpan data pesanan Anda.");
             }
-            
-            window.location.href = 'form-pemesanan.html';
         });
 
         updateOrderSummary();
